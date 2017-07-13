@@ -1,0 +1,36 @@
+{
+  "name": "jose4js",
+  "version": "0.0.1",
+  "description": "JOSE library for signing and encryption in JavaScript, using WebCryptoAPI",
+  "main": "lib/index.js",
+  "scripts": {
+    ":lint:test": "eslint test/**/*.js",
+    ":lint:lib": "eslint lib/**/*.js",
+    "lint": "npm-run-all :lint:*",
+    "pretest": "npm run lint",
+    "test": "mocha test/**/*-test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/linuxwolf/jose4js.git"
+  },
+  "keywords": [
+    "jose",
+    "crypto",
+    "security",
+    "signatures",
+    "encryption"
+  ],
+  "author": "Matthew A. Miller <linuxwolf@outer-planes.net>",
+  "license": "MPL-2.0",
+  "bugs": {
+    "url": "https://github.com/linuxwolf/jose4js/issues"
+  },
+  "homepage": "https://github.com/linuxwolf/jose4js#readme",
+  "devDependencies": {
+    "chai": "^4.1.0",
+    "eslint": "^4.2.0",
+    "mocha": "^3.4.2",
+    "npm-run-all": "^4.0.2"
+  }
+}
