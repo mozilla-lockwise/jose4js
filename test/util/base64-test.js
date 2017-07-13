@@ -2,8 +2,6 @@
  *
  */
 
-/* eslint-env mocha */
-
 var assert = require("chai").assert;
 
 const base64 = require("../../lib/util/base64");
