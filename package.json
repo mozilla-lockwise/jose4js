@@ -32,5 +32,8 @@
     "eslint": "^4.2.0",
     "mocha": "^3.4.2",
     "npm-run-all": "^4.0.2"
+  },
+  "dependencies": {
+    "text-encoding-utf-8": "^1.0.1"
   }
 }
