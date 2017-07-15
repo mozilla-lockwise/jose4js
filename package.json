@@ -34,6 +34,7 @@
     "npm-run-all": "^4.0.2"
   },
   "dependencies": {
+    "node-webcrypto-ossl": "^1.0.30",
     "text-encoding-utf-8": "^1.0.1"
   }
 }
