@@ -16,7 +16,7 @@ describe("jwa/aes-gcm", () => {
       description: "128-bit key, 0-bit AAD, 96-bit IV, 128-bit TAG",
       key: "6YtyqYgahMprduD0Pmhkeg",
       iv: "iyMpn94XQFPz1lK6",
-      aad: "",
+      adata: "",
       plaintext: "KChqMhKTJTw-CqJwSieAMg",
       ciphertext: "Wjwc8Zhdu4vtgYA2_dWrQg",
       tag: "I8erD5UrcJHNMkg1BDtetQ"
@@ -27,7 +27,7 @@ describe("jwa/aes-gcm", () => {
       description: "128-bit key, 128-bit AAD, 96-bit IV, 128-bit TAG",
       key: "gW45BwQQzyGEkE2gPqUHWg",
       iv: "MsNnozYmE7J_w-Z-",
-      aad: "8qMHKO2HTuApg8KUQ108Fg",
+      adata: "8qMHKO2HTuApg8KUQ108Fg",
       plaintext: "7K_pbGehZGdE8ciR9eaUJw",
       ciphertext: "VS6-AS57z5D873Evg0To8Q",
       tag: "7Krp_GgnakWrDKPLndlTnw"
@@ -39,7 +39,7 @@ describe("jwa/aes-gcm", () => {
       iv: "RzNg4K0kiJlZhYmV",
       plaintext: "d4m0HLPuVIgUygs4jBCzQw",
       ciphertext: "0seBEKx-jxB8DfBXC9fJDA",
-      aad: "",
+      adata: "",
       tag: "wmo3m22Y7yhS6tjOg6gzpw"
     },
     // 256-bit key, 128-bit AAD
@@ -50,7 +50,7 @@ describe("jwa/aes-gcm", () => {
       iv: "33w7ygA5bQwBhJXZ",
       plaintext: "hfw9-tm1qNMljk_ERXG9Ow",
       ciphertext: "Qm4O_Gk7e-HzAY233bt-TQ",
-      aad: "fpaNcbUMHxH9AB8_70nQRQ",
+      adata: "fpaNcbUMHxH9AB8_70nQRQ",
       tag: "7oJXeVvmoRZNfh0tbKx3pw"
     }
   ];
@@ -58,7 +58,7 @@ describe("jwa/aes-gcm", () => {
   before(async () => {
     testdata = testdata.map(async (tc) => {
       // decode all the things
-      ["key", "iv", "plaintext", "ciphertext", "aad", "tag"].forEach(k => {
+      ["key", "iv", "plaintext", "ciphertext", "adata", "tag"].forEach(k => {
         tc[k] = base64.decode(tc[k]);
       });
 
