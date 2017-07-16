@@ -2,7 +2,7 @@
  *
  */
 
-var assert = require("chai").assert;
+const assert = require("chai").assert;
 
 const utf8 = require("../../lib/util/utf8");
 

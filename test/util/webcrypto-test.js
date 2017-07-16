@@ -2,7 +2,7 @@
  *
  */
 
-var assert = require("chai").assert;
+const assert = require("chai").assert;
 
 const webcrypto = require("../../lib/util/webcrypto");
 

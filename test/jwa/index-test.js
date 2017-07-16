@@ -2,7 +2,7 @@
  *
  */
 
-var assert = require("chai").assert;
+const assert = require("chai").assert;
 
 const JWA = require("../../lib/jwa");
 
