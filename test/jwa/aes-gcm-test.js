@@ -81,7 +81,9 @@ describe("jwa/aes-gcm", () => {
           ciphertext: tc.ciphertext,
           tag: tc.tag
         };
-        assert.deepEqual(results, expected);
+        for (let e of Object.keys(expected)) {
+          assert.deepEqual(results[e], expected[e]);
+        }
       });
       it(`decrypts ${alg} (${description})`, async () => {
         let opts = Object.assign({}, tc);
@@ -89,7 +91,9 @@ describe("jwa/aes-gcm", () => {
         let expected = {
           plaintext: tc.plaintext
         };
-        assert.deepEqual(results, expected);
+        for (let e of Object.keys(expected)) {
+          assert.deepEqual(results[e], expected[e]);
+        }
       });
     });
   });
