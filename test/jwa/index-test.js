@@ -8,8 +8,9 @@ const JWA = require("../../lib/jwa");
 
 describe("JWA", () => {
   const testAlgs = {
-    "A128GCM": ["configure", "generateKey", "encrypt", "decrypt"],
-    "A256GCM": ["configure", "generateKey", "encrypt", "decrypt"]
+    "dir": ["deriveKey"],
+    "A128GCM": ["generateKey", "encrypt", "decrypt"],
+    "A256GCM": ["generateKey", "encrypt", "decrypt"]
   };
 
   describe("cipher", () => {
@@ -28,6 +29,8 @@ describe("JWA", () => {
     for (let alg of Object.keys(testAlgs)) {
       it(`can find a key for ${alg}`, async () => {
         let cipher = JWA.cipher(alg);
+        if (!("generateKey" in cipher)) { return; }
+
         let opts = cipher.configure();
         let { key } = await cipher.generateKey(opts);
 
