@@ -1,4 +1,5 @@
 # All
+/coverage
 /node_modules
 
 #MacOS
