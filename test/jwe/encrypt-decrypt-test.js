@@ -2,11 +2,13 @@
  *
  */
 
-const assert = require("chai").assert;
+const assert = require("chai").assert,
+      UTF8 = require("../../lib/util/utf8");
 
 const JWA = require("../../lib/jwa");
 const JWE = {
-  encrypt: require("../../lib/jwe/encrypt").encrypt
+  encrypt: require("../../lib/jwe/encrypt").encrypt,
+  decrypt: require("../../lib/jwe/decrypt").decrypt
 };
 
 describe("JWE", () => {
@@ -20,5 +22,10 @@ describe("JWE", () => {
     /* eslint no-console: "off" */
     console.log(`encryption result: ${JSON.stringify(result)}`);
     assert.ok(result);
+    let encrypted = result;
+    result = await JWE.decrypt(opts, encrypted);
+    assert.ok(result);
+    assert.ok(result.plaintext);
+    assert.strictEqual(UTF8.decode(result.plaintext), plaintext);
   });
 });
